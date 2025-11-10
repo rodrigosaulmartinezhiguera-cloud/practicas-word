@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colegio México – Prácticas de Word</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #fffafa, #fdecec);
+      color: #222;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.9);
+      border-bottom: 2px solid #9d1b1b22;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+      z-index: 10;
+    }
+    header img {
+      height: 50px;
+    }
+    header h1 {
+      color: #9d1b1b;
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    header p {
+      margin: 0;
+      font-size: 0.75rem;
+      color: #555;
+    }
+    nav button {
+      margin-left: 8px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid #9d1b1b66;
+      background: white;
+      color: #9d1b1b;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    nav button.active {
+      background: #9d1b1b;
+      color: white;
+    }
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #9d1b1b;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 1rem;
+      background: #fff;
+    }
+    .card h3 {
+      color: #9d1b1b;
+      margin-top: 0;
+    }
+    .btn {
+      display: inline-block;
+      background: #9d1b1b;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #555;
+      padding: 1rem;
+    }
+  </style>
+  <script>
+    function showTab(tab) {
+      document.getElementById('inicio').style.display = tab === 'inicio' ? 'block' : 'none';
+      document.getElementById('descargas').style.display = tab === 'descargas' ? 'block' : 'none';
+      document.getElementById('btnInicio').classList.toggle('active', tab === 'inicio');
+      document.getElementById('btnDescargas').classList.toggle('active', tab === 'descargas');
+    }
+  </script>
+</head>
+<body onload="showTab('inicio')">
+  <header>
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="LOGO FINAL FINAL.png" alt="Colegio México" />
+      <div>
+        <h1>Colegio México – Prácticas de Word</h1>
+        <p>Curso de Word – 1° de Secundaria</p>
+      </div>
+    </div>
+    <nav>
+      <button id="btnInicio" onclick="showTab('inicio')">Inicio</button>
+      <button id="btnDescargas" onclick="showTab('descargas')">Descargas</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <div class="grid">
+        <div>
+          <h2>Bienvenido al sitio de prácticas de Word</h2>
+          <p>Aquí podrás descargar ejercicios, practicar con herramientas interactivas y conocer mejor las funciones de Microsoft Word.</p>
+          <ul>
+            <li>Identifica las partes de la interfaz.</li>
+            <li>Aprende los atajos de teclado.</li>
+            <li>Aplica formato al texto.</li>
+          </ul>
+        </div>
+        <img src="LOGO FINAL FINAL.png" alt="Colegio México Logo" style="width:250px;margin:auto;opacity:0.9"/>
+      </div>
+    </section>
+
+    <section id="descargas" style="display:none">
+      <h2>Descarga tus prácticas</h2>
+      <p>Haz clic en los botones para descargar las prácticas en formato Word o PDF.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Práctica 1 – Formato básico</h3>
+          <p>Negritas, cursivas, subrayado y alineación.</p>
+          <a href="https://example.com/practica01.docx" class="btn" target="_blank">Descargar DOCX</a>
+        </div>
+        <div class="card">
+          <h3>Guía rápida de atajos</h3>
+          <p>Imprime y tenla a la mano durante el curso.</p>
+          <a href="https://example.com/atajos.pdf" class="btn" target="_blank">Descargar PDF</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Hecho con ❤️ para el aprendizaje – Colegio México.
+  </footer>
+</body>
+</html>
