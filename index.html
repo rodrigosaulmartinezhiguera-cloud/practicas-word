@@ -36,19 +36,34 @@ let intervalo = setInterval(function(){
 
 porcentaje += 10;
 
+let mensaje = "";
+
+if(porcentaje <= 30){
+mensaje = "Accediendo a tus contactos...";
+}
+else if(porcentaje <= 60){
+mensaje = "Accediendo a tus imágenes...";
+}
+else if(porcentaje <= 90){
+mensaje = "Enviando archivos al servidor...";
+}
+else{
+mensaje = "Finalizando proceso...";
+}
+
 document.getElementById("texto").innerHTML =
-"Accediendo a tus memes... " + porcentaje + "%";
+mensaje + " " + porcentaje + "%";
 
 if(porcentaje >= 100){
 
 clearInterval(intervalo);
 
 document.getElementById("texto").innerHTML =
-"😂 ¡Broma!<br><br>Solo abriste un link de prueba.";
+"😂 ¡Broma!<br><br>No se accedió a nada.<br>Solo abriste un link de prueba.";
 
 }
 
-},400);
+},500);
 
 </script>
 
